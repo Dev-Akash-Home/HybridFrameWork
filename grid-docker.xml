@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" thread-count="5">
 
     <listeners>
 
@@ -8,16 +8,16 @@
 
     </listeners>
 
-    <test thread-count="5" name="testCases">
+    <test name="testCases">
 
         <parameter name="OS" value="Linux"/>
-        <parameter name="Browser" value="FireFox"/>
+        <parameter name="Browser" value="Chrome"/>
 
         <classes>
 
             <class name="testCases.T001Registration"/>
-        <!--    <class name="testCases.T002LoginTest"/>
-            <class name="testCases.T003DDTLogin"/>  -->
+            <class name="testCases.T002LoginTest"/>
+            <class name="testCases.T003DDTLogin"/>
 
         </classes>
     </test>

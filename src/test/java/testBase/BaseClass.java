@@ -18,7 +18,6 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Parameters;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -44,6 +43,7 @@ public class BaseClass {
 
         logger = LogManager.getLogger(this.getClass());
 
+
             // For Remote Execution in Grid
             if (p.getProperty("execution_env").equalsIgnoreCase("remote")) {
 
@@ -52,13 +52,11 @@ public class BaseClass {
                 // Operating System
                 if (os.equalsIgnoreCase("windows10")) {
                     dc.setPlatform(Platform.WIN10);
-                }
-                else if (br.equalsIgnoreCase("linux")) dc.setPlatform(Platform.LINUX);
-
-                else if (br.equalsIgnoreCase("mac")) {
+                } else if (os.equalsIgnoreCase("linux")) {
+                    dc.setPlatform(Platform.LINUX);
+                } else if (os.equalsIgnoreCase("mac")) {
                     dc.setPlatform(Platform.MAC);
-                }
-                else {
+                } else {
                     System.out.println("No Matching OS.......");
                     return;
                 }
