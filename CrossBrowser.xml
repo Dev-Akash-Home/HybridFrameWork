@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" thread-count="5" parallel="tests">
+
+    <listeners>
+
+        <listener class-name="utilities.ExtentReportManager"/>
+
+    </listeners>
+
+    <test name="ChromeTest">
+        <parameter name="OS" value="Windows10"/>
+        <parameter name="Browser" value="Chrome"/>
+        <classes>
+
+            <class name="testCases.T001Registration"/>
+
+        </classes>
+    </test>
+
+    <test name="FireFoxTest">
+        <parameter name="OS" value="Windows10"/>
+        <parameter name="Browser" value="Firefox"/>
+        <classes>
+
+            <class name="testCases.T001Registration"/>
+
+        </classes>
+    </test>
+
+</suite>
